@@ -5,7 +5,7 @@ This repository contains examples of different Rickshaw.js chart functionality.
 ## Simple Example
 A basic line chart with two data series.
 Live Example: http://www.mattnedrich.com/rickshaw_examples/simple_graph.html
-![alt tag](https://github.com/mattnedrich/rickshaw_examples/blob/master/screenshots/simple_example.png =450x)
+<img src="https://github.com/mattnedrich/rickshaw_examples/blob/master/screenshots/simple_example.png" width="500px"/>
 
 ## Axes, Legend, and Hover Example
 The simple example with external axes, a legend, and hover details functionality.
