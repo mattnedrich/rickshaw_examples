@@ -1,4 +1,4 @@
-This repository contains examples of different Rickshaw.js chart functionality.
+This repository contains examples of different [Rickshaw.js](http://code.shutterstock.com/rickshaw/) chart functionality.
 
 ## Simple Example
 A basic line chart with two data series - [Live Example](http://www.mattnedrich.com/rickshaw_examples/simple_graph.html)
