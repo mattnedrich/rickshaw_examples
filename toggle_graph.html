@@ -1,0 +1,72 @@
+<html>
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rickshaw/1.5.1/rickshaw.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rickshaw/1.5.1/rickshaw.min.js"></script>
+</head>
+
+<body>
+  <div style="margin-bottom:10px; margin-left:20px" id="mylegend"></div>
+  <div style="display:block; float:left; width:20px; height:280px; padding-bottom:10px;" id="yaxis"></div>
+  <div>
+  <div style="margin-left:20px;" id="mychart"></div>
+  <div style="margin-left:20px" id="xaxis"></div>
+  </div>
+</body>
+
+<script>
+  var myGraph = new Rickshaw.Graph({
+    element: document.querySelector("#mychart"),
+    width: 500,
+    height: 250,
+    min: 0,
+    max: 18,
+    renderer: 'lineplot',
+    series: [ 
+    {
+      name: "Series 1",
+      color: "steelblue",
+      data: [
+      {x: 0, y:10,},{x: 1, y:3,},{x: 2, y:8,},{x: 3, y:15,},{x: 4, y:12,},
+      {x: 5, y:8,},{x: 6, y:3,},{x: 7, y:5,},{x: 8, y:2,},{x: 9, y:1,},{x: 10, y:4,},
+      ]
+    },
+    {
+      name: "Series 2",
+      color: "green",
+      data: [
+      {x: 0, y:5,},{x: 1, y:3,},{x: 2, y:8,},{x: 3, y:6,},{x: 4, y:3,},
+      {x: 5, y:12,},{x: 6, y:13,},{x: 7, y:14,},{x: 8, y:12,},{x: 9, y:8,},{x: 10, y:9,},
+      ]
+    }
+    ]
+  });
+  var xTicks = new Rickshaw.Graph.Axis.X({
+    graph:myGraph,
+    orientation: "bottom",
+    element: document.querySelector("#xaxis")
+  });
+  var yTicks = new Rickshaw.Graph.Axis.Y({
+    graph:myGraph,
+    orientation: "left",
+    element: document.querySelector("#yaxis")
+  });
+  var graphHover = new Rickshaw.Graph.HoverDetail({
+    graph:myGraph
+  });
+  var myLegend = new Rickshaw.Graph.Legend({
+    graph:myGraph,
+    element: document.querySelector("#mylegend")
+  });
+  var toggling = new Rickshaw.Graph.Behavior.Series.Toggle({
+    graph: myGraph,
+    legend: myLegend
+  });
+  myGraph.render();
+</script>
+
+</html>
